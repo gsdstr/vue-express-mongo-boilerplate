@@ -2,7 +2,8 @@ extends layout
 
 block styles
 	// Site stylesheet
-	link(rel='stylesheet', href='/app/styles/frontend.css')
+	if (global.process.env.NODE_ENV !== 'development')
+		link(rel='stylesheet', href='/app/styles/frontend.css')
 
 block content
 	.page

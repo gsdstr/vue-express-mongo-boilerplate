@@ -21,7 +21,10 @@ module.exports = merge(baseWpConfig, {
 			},
 			{
 				test: /\.vue$/,
-				loader: "vue-loader"
+				loader: "vue-loader",
+				options: {
+					loaders: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
+				}
 			}, {
 				test: /\.pug$/,
 				loader: 'pug-plain-loader'

@@ -2,7 +2,8 @@ extends layout
 
 block styles
 	// Site stylesheet
-	link(rel='stylesheet', href='/app/styles/app.css')
+	if (global.process.env.NODE_ENV !== 'development')
+		link(rel='stylesheet', href='/app/styles/app.css')
 
 block content
 	#app
@@ -11,4 +12,3 @@ block scripts
 	// Site scripts
 	script(src='/app/vendor.js')
 	script(src='/app/app.js')
-	
